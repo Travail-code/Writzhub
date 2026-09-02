@@ -24,9 +24,9 @@ export function LandingPage() {
       <main>
         <Hero />
         <ExecutorMarquee />
+        <Showcase />
         <Features />
         <Stats />
-        <Showcase />
       </main>
       <Footer />
     </div>
