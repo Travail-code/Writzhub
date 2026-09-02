@@ -92,6 +92,7 @@
   }
 }
 
+/* Glitch only on pseudo-elements — never on the real title text */
 @keyframes glitch-flicker {
   0%,
   86%,
@@ -194,30 +195,35 @@
   transform-origin: bottom center;
 }
 
+/* Title stays always visible — glitch is decorative only on ::before/::after */
 .glitch-title {
   position: relative;
-  animation: glitch-flicker 7s steps(2, end) infinite;
+  display: block;
+  color: var(--color-fg);
 }
 
 .glitch-title::before,
 .glitch-title::after {
   content: attr(data-text);
   position: absolute;
-  inset: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .glitch-title::before {
   color: rgb(255 255 255 / 0.45);
-  transform: translate(2px, 0);
   animation: glitch-flicker 7s steps(2, end) infinite;
   animation-delay: 40ms;
 }
 
 .glitch-title::after {
   color: rgb(255 255 255 / 0.25);
-  transform: translate(-2px, 0);
   animation: glitch-flicker 7s steps(2, end) infinite;
   animation-delay: 80ms;
 }
@@ -376,7 +382,6 @@
   }
 
   .letter-cascade,
-  .glitch-title,
   .glitch-title::before,
   .glitch-title::after,
   .marquee-track,
