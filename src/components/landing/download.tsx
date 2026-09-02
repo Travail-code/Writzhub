@@ -40,15 +40,15 @@ export function DownloadSection() {
     <section id="download" className="relative z-10 mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-32">
       <div className="glass-strong overflow-hidden rounded-xl px-6 py-12 md:px-14 md:py-16">
         <Reveal>
-          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-faint">Télécharger</p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-faint">Download</p>
         </Reveal>
         <WordReveal
-          text="Un loadstring. Tous les executors."
+          text="One loadstring. Every executor."
           className="font-display mt-4 max-w-xl text-[clamp(1.8rem,4vw,3rem)] font-semibold leading-[1.12] tracking-[-0.03em]"
         />
         <Reveal delay={80}>
           <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted">
-            Copie le loader, colle-le dans ton executor, execute. Writz Hub se met à jour tout seul.
+            Copy the loader, paste it into your executor, run. Writz Hub updates itself.
           </p>
         </Reveal>
 
@@ -67,7 +67,7 @@ export function DownloadSection() {
         <Reveal delay={180}>
           <div className="mt-5 flex flex-wrap items-center gap-3">
             <GlowButton onClick={copy} icon={copied ? <Check className="size-4" /> : <Copy className="size-4" />}>
-              {copied ? "Copié" : "Copier le loadstring"}
+              {copied ? "Copied" : "Copy loadstring"}
             </GlowButton>
             <GlowButton
               variant="glow"
@@ -75,7 +75,7 @@ export function DownloadSection() {
               download="loader.lua"
               icon={<Download className="size-4" />}
             >
-              Télécharger .lua
+              Download .lua
             </GlowButton>
           </div>
         </Reveal>
