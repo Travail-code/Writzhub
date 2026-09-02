@@ -188,11 +188,17 @@
   }
 }
 
+/* Letters start hidden only while waiting for mount, then animate in and stay visible */
 .letter-cascade {
   display: inline-block;
-  opacity: 0;
-  animation: letter-in 720ms var(--ease-out-expo) forwards;
+  opacity: 1;
+  animation: letter-in 720ms var(--ease-out-expo) both;
   transform-origin: bottom center;
+}
+
+.letter-cascade--pending {
+  opacity: 0;
+  animation: none;
 }
 
 /* Title stays always visible — glitch is decorative only on ::before/::after */
@@ -394,7 +400,8 @@
     animation: none !important;
   }
 
-  .letter-cascade {
+  .letter-cascade,
+  .letter-cascade--pending {
     opacity: 1;
     transform: none;
     filter: none;
