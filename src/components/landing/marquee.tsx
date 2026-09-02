@@ -31,9 +31,9 @@ export function ExecutorMarquee() {
   const loop = [...EXECUTORS, ...EXECUTORS];
 
   return (
-    <section aria-label="Executors compatibles" className="relative z-10 py-8">
+    <section aria-label="Compatible executors" className="relative z-10 py-8">
       <p className="mb-5 text-center font-mono text-[11px] uppercase tracking-[0.22em] text-faint">
-        Executors compatibles
+        Compatible executors
       </p>
       <div className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-bg to-transparent md:w-28" />
