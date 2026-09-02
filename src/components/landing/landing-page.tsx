@@ -1,6 +1,5 @@
 import { AmbientBg } from "./ambient-bg";
 import { CustomCursor } from "./custom-cursor";
-import { DownloadSection } from "./download";
 import { ExecutorMarquee } from "./marquee";
 import { Features } from "./features";
 import { Footer } from "./footer";
@@ -16,7 +15,7 @@ export function LandingPage() {
         href="#features"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-fg focus:px-3 focus:py-2 focus:text-accent-fg"
       >
-        Aller au contenu
+        Skip to content
       </a>
       <CustomCursor />
       <AmbientBg />
@@ -28,7 +27,6 @@ export function LandingPage() {
         <Features />
         <Stats />
         <Showcase />
-        <DownloadSection />
       </main>
       <Footer />
     </div>
