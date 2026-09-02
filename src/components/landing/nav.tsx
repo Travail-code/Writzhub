@@ -7,7 +7,7 @@ const LINKS = [
   { href: "#features", label: "Features" },
   { href: "#stats", label: "Stats" },
   { href: "#showcase", label: "Preview" },
-  { href: "#download", label: "Download" },
+  { href: "#download", label: "Get script" },
 ];
 
 export function Nav() {
@@ -57,7 +57,7 @@ export function Nav() {
 
         <div className="hidden md:block">
           <GlowButton href="#download" className="min-h-10 px-5 py-2 text-[13px]">
-            Download
+            Copy script
           </GlowButton>
         </div>
 
@@ -90,7 +90,7 @@ export function Nav() {
             </a>
           ))}
           <GlowButton href="#download" onClick={() => setOpen(false)}>
-            Download
+            Copy script
           </GlowButton>
         </nav>
       </div>
