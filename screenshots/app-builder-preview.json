@@ -1,0 +1,39 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Writz Hub",
+      "hasCanvas": true,
+      "bodyTextLen": 2260,
+      "bodyTextHash": "d569c2a681247e8c9278acf9839a66850b4a123d5865acd93e3514f2eeae6097",
+      "bodyTextPrefix": "Aller au contenu W Writz Hub Fonctionnalités Chiffres Aperçu Tél",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Writz Hub",
+      "hasCanvas": true,
+      "bodyTextLen": 2153,
+      "bodyTextHash": "a60c6268db58bef89ea1caf334bb4523ee979455a587d0b9156f7af79356fb46",
+      "bodyTextPrefix": "Aller au contenu W Writz Hub SCRIPT HUB · 2026 Writz Hub Exécute",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [
+    "BRAND WARNING: this looks like a game/canvas app but /workspace/public/og.jpg is missing. Games and visually rich apps must ship a custom 1200x630 share card built from the app's own art — the default og.grok.me placeholder card is not acceptable for them. You are not done: open /workspace/.grok/skills/og/SKILL.md and finish the brand-asset pass.",
+    "BRAND WARNING: this looks like a game/canvas app but src/lib/og/site.json is missing \"type\": \"x:game\". X uses og:type=x:game to present the unfurl as a game card — set it in /workspace/src/lib/og/site.json per /workspace/.grok/skills/og/SKILL.md. Do not invent x:type or overload twitter:card as the game signal."
+  ],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
