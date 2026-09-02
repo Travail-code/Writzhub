@@ -4,10 +4,10 @@ import { cn } from "@/lib/utils";
 import { GlowButton } from "./glow-button";
 
 const LINKS = [
-  { href: "#features", label: "Fonctionnalités" },
-  { href: "#stats", label: "Chiffres" },
-  { href: "#showcase", label: "Aperçu" },
-  { href: "#download", label: "Télécharger" },
+  { href: "#features", label: "Features" },
+  { href: "#stats", label: "Stats" },
+  { href: "#showcase", label: "Preview" },
+  { href: "#download", label: "Download" },
 ];
 
 export function Nav() {
@@ -43,7 +43,7 @@ export function Nav() {
           <span className="font-display text-[15px] font-semibold tracking-tight">Writz Hub</span>
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Principal">
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Main">
           {LINKS.map((link) => (
             <a
               key={link.href}
@@ -57,14 +57,14 @@ export function Nav() {
 
         <div className="hidden md:block">
           <GlowButton href="#download" className="min-h-10 px-5 py-2 text-[13px]">
-            Télécharger
+            Download
           </GlowButton>
         </div>
 
         <button
           type="button"
           className="grid size-11 place-items-center rounded-full text-fg shadow-[0_0_0_1px_rgb(255_255_255_/_0.16)] md:hidden"
-          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
@@ -90,7 +90,7 @@ export function Nav() {
             </a>
           ))}
           <GlowButton href="#download" onClick={() => setOpen(false)}>
-            Télécharger
+            Download
           </GlowButton>
         </nav>
       </div>
