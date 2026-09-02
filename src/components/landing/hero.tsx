@@ -23,26 +23,18 @@ export function Hero() {
       </div>
 
       <h1
-        className="glitch-title font-display mt-8 text-[clamp(3.2rem,12vw,8.5rem)] font-semibold leading-[0.9] tracking-[-0.045em] text-fg"
-        data-text={TITLE}
-        aria-label={TITLE}
+        className={cnReady(
+          mounted,
+          "font-display mt-8 text-[clamp(3.2rem,12vw,8.5rem)] font-semibold leading-[0.9] tracking-[-0.045em] text-fg",
+        )}
+        style={{ transitionDelay: "120ms" }}
       >
-        {TITLE.split("").map((ch, i) => (
-          <span
-            key={`${ch}-${i}`}
-            className={mounted ? "letter-cascade" : "letter-cascade letter-cascade--pending"}
-            style={{
-              animationDelay: mounted ? `${120 + i * 55}ms` : undefined,
-            }}
-          >
-            {ch === " " ? "\u00A0" : ch}
-          </span>
-        ))}
+        {TITLE}
       </h1>
 
       <p
         className={cnReady(mounted, "mx-auto mt-7 max-w-xl text-base leading-relaxed text-muted md:text-lg")}
-        style={{ transitionDelay: "620ms" }}
+        style={{ transitionDelay: "280ms" }}
       >
         Exécute tes scripts avec une précision chirurgicale. Interface premium,
         chargement instantané, compatible avec tous les executors.
@@ -50,7 +42,7 @@ export function Hero() {
 
       <div
         className={cnReady(mounted, "mt-10 flex flex-wrap items-center justify-center gap-3")}
-        style={{ transitionDelay: "780ms" }}
+        style={{ transitionDelay: "420ms" }}
       >
         <GlowButton href="#download" icon={<Download className="size-4" />}>
           Télécharger
@@ -62,7 +54,7 @@ export function Hero() {
 
       <p
         className={cnReady(mounted, "mt-8 font-mono text-[11px] tracking-wide text-faint")}
-        style={{ transitionDelay: "920ms" }}
+        style={{ transitionDelay: "520ms" }}
       >
         loadstring · keyless · auto-update
       </p>
