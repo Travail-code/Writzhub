@@ -3,17 +3,17 @@ import { Reveal, WordReveal } from "./reveal";
 import { usePrefersReducedMotion } from "./hooks";
 
 const STATS = [
-  { value: 48200, suffix: "+", label: "Utilisateurs" },
+  { value: 48200, suffix: "+", label: "Users" },
   { value: 128, suffix: "", label: "Scripts" },
-  { value: 2.4, suffix: "M", label: "Téléchargements", decimals: 1 },
+  { value: 2.4, suffix: "M", label: "Downloads", decimals: 1 },
   { value: 12, suffix: "", label: "Executors" },
 ] as const;
 
 function formatValue(n: number, decimals: number) {
-  if (decimals > 0) return n.toFixed(decimals).replace(".", ",");
+  if (decimals > 0) return n.toFixed(decimals);
   return Math.round(n)
     .toString()
-    .replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 function Counter({
@@ -80,10 +80,10 @@ export function Stats() {
   return (
     <section id="stats" className="relative z-10 mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
       <Reveal>
-        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-faint">En chiffres</p>
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-faint">By the numbers</p>
       </Reveal>
       <WordReveal
-        text="Une communauté qui exécute."
+        text="A community that executes."
         className="font-display mt-4 max-w-xl text-[clamp(1.8rem,4.4vw,3rem)] font-semibold leading-[1.12] tracking-[-0.03em]"
       />
 
