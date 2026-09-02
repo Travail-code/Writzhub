@@ -5,7 +5,7 @@ import appCss from "../styles.css?url";
 
 const APP_NAME = "Writz Hub";
 const APP_DESCRIPTION =
-  "Writz Hub — hub de scripts premium pour Roblox. Compatible Xeno, Solara, Delta et plus.";
+  "Writz Hub — premium script hub for Roblox. Compatible with Xeno, Solara, Delta and more.";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -34,7 +34,7 @@ export const Route = createRootRoute({
 
 function RootDocument() {
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
