@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { Play, Search } from "lucide-react";
+import { HUB_VERSION } from "@/lib/hub-meta";
 import { useFinePointer, usePrefersReducedMotion } from "./hooks";
 import { cn } from "@/lib/utils";
 
@@ -69,7 +70,9 @@ export function HubMockup() {
           <span className="size-2.5 rounded-full bg-fg/25" />
           <span className="size-2.5 rounded-full bg-fg/18" />
           <span className="size-2.5 rounded-full bg-fg/12" />
-          <span className="ml-3 font-mono text-[11px] text-faint">writz-hub · v3.2.1</span>
+          <span className="ml-3 font-mono text-[11px] text-faint">
+            writz-hub · v{HUB_VERSION}
+          </span>
           <span className="ml-auto flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-muted">
             <span className="live-blink size-1.5 rounded-full bg-fg" />
             Ready
