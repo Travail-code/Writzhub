@@ -1,4 +1,4 @@
-export const HUB_VERSION = "3.2.1";
+export const HUB_VERSION = "1.2";
 
 export type ServiceStatus = "operational" | "degraded" | "outage";
 
@@ -45,41 +45,32 @@ export const SERVICES: Service[] = [
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
-    version: "3.2.1",
-    date: "2026-09-01",
+    version: "1.2",
+    date: "2026-09-02",
     tag: "latest",
     changes: [
-      "Faster cold start on light executors",
-      "Fixed ESP toggle desync on teleport",
-      "Improved search ranking for universal scripts",
+      "Public landing page with loadstring copy",
+      "Status page and changelog",
+      "Compatible executors showcase",
     ],
   },
   {
-    version: "3.2.0",
-    date: "2026-08-18",
+    version: "1.1",
+    date: "2026-08-20",
     tag: "stable",
     changes: [
-      "New premium UI panel with categories",
-      "Keyless loader rewrite",
-      "Multi-executor runtime detection",
+      "Keyless loader",
+      "Auto-update pipeline",
+      "Multi-executor support",
     ],
   },
   {
-    version: "3.1.4",
-    date: "2026-07-30",
+    version: "1.0",
+    date: "2026-08-01",
     changes: [
-      "Auto-update reliability improvements",
-      "Reduced loader payload size",
-      "Minor stability fixes",
-    ],
-  },
-  {
-    version: "3.1.0",
-    date: "2026-07-02",
-    changes: [
-      "Universal script library expansion",
-      "Hitbox & farm modules updated",
-      "New status endpoint",
+      "Initial release",
+      "Core script library",
+      "Basic UI panel",
     ],
   },
 ];
