@@ -36,8 +36,8 @@ export function Hero() {
         className={cnReady(mounted, "mx-auto mt-7 max-w-xl text-base leading-relaxed text-muted md:text-lg")}
         style={{ transitionDelay: "280ms" }}
       >
-        Exécute tes scripts avec une précision chirurgicale. Interface premium,
-        chargement instantané, compatible avec tous les executors.
+        Run your scripts with surgical precision. Premium interface,
+        instant load, compatible with every executor.
       </p>
 
       <div
@@ -45,10 +45,10 @@ export function Hero() {
         style={{ transitionDelay: "420ms" }}
       >
         <GlowButton href="#download" icon={<Download className="size-4" />}>
-          Télécharger
+          Download
         </GlowButton>
         <GlowButton variant="glow" href="#showcase" icon={<ArrowDownRight className="size-4" />}>
-          Voir l’aperçu
+          View preview
         </GlowButton>
       </div>
 
