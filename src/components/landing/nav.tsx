@@ -5,9 +5,9 @@ import { GlowButton } from "./glow-button";
 
 const LINKS = [
   { href: "#features", label: "Features" },
-  { href: "#stats", label: "Stats" },
   { href: "#showcase", label: "Preview" },
-  { href: "#download", label: "Get script" },
+  { href: "#changelog", label: "Changelog" },
+  { href: "/status", label: "Status" },
 ];
 
 export function Nav() {
