@@ -1,7 +1,8 @@
 const LINKS = [
-  { href: "https://discord.gg/writzhub", label: "Discord" },
-  { href: "https://github.com/writzhub", label: "GitHub" },
-  { href: "https://youtube.com/@writzhub", label: "YouTube" },
+  { href: "/#changelog", label: "Changelog" },
+  { href: "/status", label: "Status" },
+  { href: "https://discord.gg/writzhub", label: "Discord", external: true },
+  { href: "https://github.com/writzhub", label: "GitHub", external: true },
 ];
 
 export function Footer() {
@@ -18,13 +19,14 @@ export function Footer() {
           </div>
         </div>
 
-        <nav aria-label="Social" className="flex flex-wrap gap-6">
+        <nav aria-label="Footer" className="flex flex-wrap gap-6">
           {LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              target="_blank"
-              rel="noreferrer"
+              {...(link.external
+                ? { target: "_blank", rel: "noreferrer" }
+                : {})}
               className="text-sm text-muted transition-colors duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] hover:text-fg"
             >
               {link.label}
