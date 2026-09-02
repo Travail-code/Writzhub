@@ -18,7 +18,7 @@ export function Footer() {
           </div>
         </div>
 
-        <nav aria-label="Réseaux" className="flex flex-wrap gap-6">
+        <nav aria-label="Social" className="flex flex-wrap gap-6">
           {LINKS.map((link) => (
             <a
               key={link.href}
