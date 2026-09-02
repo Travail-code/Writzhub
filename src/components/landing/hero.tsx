@@ -23,17 +23,16 @@ export function Hero() {
       </div>
 
       <h1
-        className="glitch-title font-display mt-8 text-[clamp(3.2rem,12vw,8.5rem)] font-semibold leading-[0.9] tracking-[-0.045em]"
+        className="glitch-title font-display mt-8 text-[clamp(3.2rem,12vw,8.5rem)] font-semibold leading-[0.9] tracking-[-0.045em] text-fg"
         data-text={TITLE}
         aria-label={TITLE}
       >
         {TITLE.split("").map((ch, i) => (
           <span
             key={`${ch}-${i}`}
-            className="letter-cascade"
+            className={mounted ? "letter-cascade" : "letter-cascade letter-cascade--pending"}
             style={{
-              animationDelay: mounted ? `${120 + i * 55}ms` : "0ms",
-              animationPlayState: mounted ? "running" : "paused",
+              animationDelay: mounted ? `${120 + i * 55}ms` : undefined,
             }}
           >
             {ch === " " ? "\u00A0" : ch}
