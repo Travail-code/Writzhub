@@ -8,33 +8,33 @@ const FEATURES: {
   icon: LucideIcon;
 }[] = [
   {
-    title: "Sans clé",
-    body: "Exécution directe. Pas de key system, pas de pub, pas d’attente. Tu injectes, ça tourne.",
+    title: "Keyless",
+    body: "Direct execution. No key system, no ads, no waiting. Inject and it runs.",
     icon: Shield,
   },
   {
-    title: "Instantané",
-    body: "Loader allégé, runtime compact. Le hub s’ouvre en quelques millisecondes, même sur un executor léger.",
+    title: "Instant",
+    body: "Lightweight loader, compact runtime. The hub opens in milliseconds, even on light executors.",
     icon: Zap,
   },
   {
-    title: "Universel",
-    body: "Une seule librairie pour des dizaines de jeux. Farm, ESP, teleport, auto — triés, testés, versionnés.",
+    title: "Universal",
+    body: "One library for dozens of games. Farm, ESP, teleport, auto — sorted, tested, versioned.",
     icon: Layers,
   },
   {
     title: "Auto-update",
-    body: "Le loader tire toujours la dernière build. Plus besoin de redownload à chaque patch.",
+    body: "The loader always pulls the latest build. No need to redownload every patch.",
     icon: RefreshCw,
   },
   {
-    title: "UI premium",
-    body: "Panneau sombre, lisible, pensé pour le grind. Raccourcis, search, catégories — zéro friction.",
+    title: "Premium UI",
+    body: "Dark panel, readable, built for the grind. Shortcuts, search, categories — zero friction.",
     icon: Terminal,
   },
   {
     title: "Multi-executors",
-    body: "Xeno, Solara, Delta, Wave, Swift, Codex. Un loadstring, tous les runtimes.",
+    body: "Xeno, Solara, Delta, Wave, Swift, Codex. One loadstring, every runtime.",
     icon: Gauge,
   },
 ];
@@ -43,15 +43,15 @@ export function Features() {
   return (
     <section id="features" className="relative z-10 mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-32">
       <Reveal>
-        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-faint">Fonctionnalités</p>
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-faint">Features</p>
       </Reveal>
       <WordReveal
-        text="Tout ce qu’un hub doit être. Rien de plus."
+        text="Everything a hub should be. Nothing more."
         className="font-display mt-4 max-w-2xl text-[clamp(1.8rem,4.4vw,3.1rem)] font-semibold leading-[1.12] tracking-[-0.03em]"
       />
       <Reveal delay={80}>
         <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted md:text-base">
-          Writz Hub est taillé pour l’exécution : rapide, stable, et assez discret pour rester élégant.
+          Writz Hub is built for execution: fast, stable, and discreet enough to stay elegant.
         </p>
       </Reveal>
 
