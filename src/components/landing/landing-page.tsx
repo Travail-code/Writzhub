@@ -1,4 +1,5 @@
 import { AmbientBg } from "./ambient-bg";
+import { Changelog } from "./changelog";
 import { CustomCursor } from "./custom-cursor";
 import { ExecutorMarquee } from "./marquee";
 import { Features } from "./features";
@@ -27,6 +28,7 @@ export function LandingPage() {
         <Showcase />
         <Features />
         <Stats />
+        <Changelog />
       </main>
       <Footer />
     </div>
