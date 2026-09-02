@@ -1,11 +1,38 @@
-import { ArrowDownRight, Download } from "lucide-react";
+import { useState } from "react";
+import { ArrowDownRight, Check, Copy } from "lucide-react";
 import { GlowButton } from "./glow-button";
 import { useMounted } from "./hooks";
 
 const TITLE = "Writz Hub";
 
+export const LOADSTRING =
+  'loadstring(game:HttpGet("https://writzhub.dev/loader.lua"))()';
+
 export function Hero() {
   const mounted = useMounted();
+  const [copied, setCopied] = useState(false);
+
+  const copy = async () => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(LOADSTRING);
+      } else {
+        throw new Error("clipboard unavailable");
+      }
+    } catch {
+      const ta = document.createElement("textarea");
+      ta.value = LOADSTRING;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      ta.remove();
+    }
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1800);
+  };
 
   return (
     <section
@@ -32,21 +59,39 @@ export function Hero() {
         {TITLE}
       </h1>
 
+      <div
+        id="download"
+        className={cnReady(mounted, "mx-auto mt-8 w-full max-w-xl")}
+        style={{ transitionDelay: "280ms" }}
+      >
+        <div className="overflow-hidden rounded-md bg-bg/70 text-left shadow-[0_0_0_1px_rgb(255_255_255_/_0.08)]">
+          <div className="flex items-center justify-between border-b border-line px-4 py-2">
+            <span className="font-mono text-[11px] text-faint">loader.lua</span>
+            <span className="font-mono text-[10px] uppercase tracking-wider text-faint">Luau</span>
+          </div>
+          <pre className="overflow-x-auto px-4 py-3 font-mono text-[12px] leading-relaxed text-fg md:text-[13px]">
+            {LOADSTRING}
+          </pre>
+        </div>
+        <div className="mt-3 flex justify-center">
+          <GlowButton onClick={copy} icon={copied ? <Check className="size-4" /> : <Copy className="size-4" />}>
+            {copied ? "Copied" : "Copy loadstring"}
+          </GlowButton>
+        </div>
+      </div>
+
       <p
         className={cnReady(mounted, "mx-auto mt-7 max-w-xl text-base leading-relaxed text-muted md:text-lg")}
-        style={{ transitionDelay: "280ms" }}
+        style={{ transitionDelay: "380ms" }}
       >
         Run your scripts with surgical precision. Premium interface,
         instant load, compatible with every executor.
       </p>
 
       <div
-        className={cnReady(mounted, "mt-10 flex flex-wrap items-center justify-center gap-3")}
-        style={{ transitionDelay: "420ms" }}
+        className={cnReady(mounted, "mt-8 flex flex-wrap items-center justify-center gap-3")}
+        style={{ transitionDelay: "480ms" }}
       >
-        <GlowButton href="#download" icon={<Download className="size-4" />}>
-          Download
-        </GlowButton>
         <GlowButton variant="glow" href="#showcase" icon={<ArrowDownRight className="size-4" />}>
           View preview
         </GlowButton>
@@ -54,7 +99,7 @@ export function Hero() {
 
       <p
         className={cnReady(mounted, "mt-8 font-mono text-[11px] tracking-wide text-faint")}
-        style={{ transitionDelay: "520ms" }}
+        style={{ transitionDelay: "560ms" }}
       >
         loadstring · keyless · auto-update
       </p>
