@@ -3,6 +3,7 @@ import { ArrowDownRight, Check, Copy } from "lucide-react";
 import { GlowButton } from "./glow-button";
 import { useMounted } from "./hooks";
 import { LOADSTRING } from "./download";
+import { Executor } from "./executor";
 
 const TITLE = "Writz Hub";
 
@@ -77,6 +78,8 @@ export function Hero() {
           </GlowButton>
         </div>
       </div>
+
+      <Executor />
 
       <p
         className={cnReady(mounted, "mx-auto mt-7 max-w-xl text-base leading-relaxed text-muted md:text-lg")}
