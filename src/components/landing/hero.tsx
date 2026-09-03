@@ -2,11 +2,9 @@ import { useState } from "react";
 import { ArrowDownRight, Check, Copy } from "lucide-react";
 import { GlowButton } from "./glow-button";
 import { useMounted } from "./hooks";
+import { LOADSTRING } from "./download";
 
 const TITLE = "Writz Hub";
-
-export const LOADSTRING =
-  'loadstring(game:HttpGet("https://writzhub.dev/loader.lua"))()';
 
 export function Hero() {
   const mounted = useMounted();

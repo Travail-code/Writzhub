@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { Reveal, WordReveal } from "./reveal";
-import { usePrefersReducedMotion } from "./hooks";
 
 const STATS = [
   { value: 48200, suffix: "+", label: "Users" },
@@ -27,15 +26,10 @@ function Counter({
   decimals?: number;
   active: boolean;
 }) {
-  const reduced = usePrefersReducedMotion();
   const [shown, setShown] = useState(0);
 
   useEffect(() => {
     if (!active) return;
-    if (reduced) {
-      setShown(value);
-      return;
-    }
     let raf = 0;
     const start = performance.now();
     const duration = 1600;
@@ -47,7 +41,7 @@ function Counter({
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [active, reduced, value]);
+  }, [active, value]);
 
   return (
     <span className="font-display tabular-nums text-[clamp(2.2rem,5vw,3.6rem)] font-semibold tracking-tight">

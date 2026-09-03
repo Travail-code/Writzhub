@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { Play, Search } from "lucide-react";
 import { HUB_VERSION } from "@/lib/hub-meta";
-import { useFinePointer, usePrefersReducedMotion } from "./hooks";
+import { useFinePointer, usePrefersReducedMotion, useIsMobile } from "./hooks";
 import { cn } from "@/lib/utils";
 
 const SCRIPTS = [
@@ -20,12 +20,13 @@ export function HubMockup() {
   const innerRef = useRef<HTMLDivElement>(null);
   const fine = useFinePointer();
   const reduced = usePrefersReducedMotion();
+  const isMobile = useIsMobile();
   const [activeNav, setActiveNav] = useState("Universal");
   const [running, setRunning] = useState("Auto Farm");
 
   useEffect(() => {
     const wrap = wrapRef.current;
-    if (!wrap || reduced) return;
+    if (!wrap || reduced || isMobile) return;
 
     const onScroll = () => {
       const rect = wrap.getBoundingClientRect();
@@ -36,11 +37,11 @@ export function HubMockup() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [reduced]);
+  }, [reduced, isMobile]);
 
   const onMove = (e: MouseEvent<HTMLDivElement>) => {
     const inner = innerRef.current;
-    if (!inner || !fine || reduced) return;
+    if (!inner || !fine || reduced || isMobile) return;
     const r = e.currentTarget.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width - 0.5;
     const y = (e.clientY - r.top) / r.height - 0.5;
