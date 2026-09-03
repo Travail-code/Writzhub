@@ -2,6 +2,12 @@ import type { ErrorComponentProps } from "@tanstack/react-router";
 import { TriangleAlert } from "lucide-react";
 
 export function AppErrorComponent({ error }: ErrorComponentProps) {
+  // En production, on cache les détails de l'erreur pour des raisons de sécurité
+  const isProduction = import.meta.env.PROD;
+  const displayMessage = isProduction
+    ? "Une erreur est survenue. Veuillez réessayer."
+    : (error.message || "An unexpected error occurred. Try reloading the page.");
+
   return (
     <main
       className={
@@ -14,7 +20,7 @@ export function AppErrorComponent({ error }: ErrorComponentProps) {
       </span>
       <h1 className="text-lg font-semibold">Something went wrong</h1>
       <p className="max-w-md text-sm break-words text-zinc-500 dark:text-zinc-400">
-        {error.message || "An unexpected error occurred. Try reloading the page."}
+        {displayMessage}
       </p>
     </main>
   );

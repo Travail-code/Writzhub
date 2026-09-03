@@ -1,105 +1,40 @@
 ```
-# Dependencies
-node_modules/
-
-# Build outputs
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+*.o
+*.obj
 dist/
 build/
-.next/
-out/
+target/
 
-# Environment variables
+# Dependencies
+node_modules/
+venv/
+.venv/
 .env
 .env.local
 .env.*
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.venv/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage
-coverage/
-htmlcov/
-.nox/
-
-# Logs
+# Logs and temp files
 *.log
+*.tmp
+*.swp
 
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# IDE
+# Editors
 .vscode/
 .idea/
-*.swp
-*.swo
 
-# Testing
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Python specific
 .mypy_cache/
 .pytest_cache/
-coverage.xml
 
-# Distribution / packaging
-*.tar.gz
-*.whl
-
-# Temporary files
-*.tmp
-*.temp
-
-# Compiled JavaScript
-*.min.js
-*.bundle.js
-
-# Source maps
-*.map
-
-# Lock files
-package-lock.json
-yarn.lock
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Coverage directory used by tools like istanbul
-coverage/
-
-# nyc test coverage
-.nyc_output
-
-# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
-
-# Bower dependency directory (https://bower.io/)
-bower_components
-
-# node-waf configuration
-.lock-wscript
-
-# Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
-
-# Dependency directories
-node_modules/
-jspm_packages/
-
-# Typescript output
-*.tsbuildinfo
+# System files
+.DS_Store
+Thumbs.db
 ```
