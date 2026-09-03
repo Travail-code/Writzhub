@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useFinePointer, usePrefersReducedMotion } from "./hooks";
+import { useFinePointer, usePrefersReducedMotion, useIsMobile } from "./hooks";
 
 type Particle = {
   x: number;
@@ -15,21 +15,22 @@ export function AmbientBg() {
   const glowRef = useRef<HTMLDivElement>(null);
   const reduced = usePrefersReducedMotion();
   const fine = useFinePointer();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const glow = glowRef.current;
-    if (!glow || !fine) return;
+    if (!glow || !fine || isMobile) return;
     const onMove = (e: PointerEvent) => {
       glow.style.setProperty("--mx", `${e.clientX}px`);
       glow.style.setProperty("--my", `${e.clientY}px`);
     };
     window.addEventListener("pointermove", onMove, { passive: true });
     return () => window.removeEventListener("pointermove", onMove);
-  }, [fine]);
+  }, [fine, isMobile]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas || reduced) return;
+    if (!canvas || reduced || isMobile) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -124,7 +125,7 @@ export function AmbientBg() {
       window.removeEventListener("pointermove", onMove);
       document.removeEventListener("visibilitychange", onVisibility);
     };
-  }, [reduced]);
+  }, [reduced, isMobile]);
 
   return (
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">

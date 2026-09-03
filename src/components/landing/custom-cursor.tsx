@@ -1,14 +1,15 @@
 import { useEffect, useRef } from "react";
-import { useFinePointer, usePrefersReducedMotion } from "./hooks";
+import { useFinePointer, usePrefersReducedMotion, useIsMobile } from "./hooks";
 
 export function CustomCursor() {
   const fine = useFinePointer();
   const reduced = usePrefersReducedMotion();
+  const isMobile = useIsMobile();
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!fine || reduced) {
+    if (!fine || reduced || isMobile) {
       document.documentElement.classList.remove("has-custom-cursor");
       return;
     }
@@ -52,9 +53,9 @@ export function CustomCursor() {
       cancelAnimationFrame(raf);
       document.documentElement.classList.remove("has-custom-cursor");
     };
-  }, [fine, reduced]);
+  }, [fine, reduced, isMobile]);
 
-  if (!fine || reduced) return null;
+  if (!fine || reduced || isMobile) return null;
 
   return (
     <>
