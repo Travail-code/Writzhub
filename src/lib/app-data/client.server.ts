@@ -211,7 +211,9 @@ function tokenIdentityKey(token: string): string {
             .digest("base64url");
         }
       }
-    } catch {}
+    } catch {
+      // Silently ignore crypto errors and fallback to simple hash
+    }
   }
   return createHash("sha256").update(token).digest("base64url");
 }
